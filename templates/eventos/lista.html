@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Eventos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Eventos</h1>
+
+    <a href="/eventos/novo">
+        <button>Novo Evento</button>
+    </a>
+
+    {% for evento in eventos %}
+        <div class="card">
+            <h3>{{ evento.nome }}</h3>
+            <p>{{ evento.descricao }}</p>
+            <small>{{ evento.departamento }}</small>
+            <p>Meta: R$ {{ evento.meta_financeira }}</p>
+        </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>

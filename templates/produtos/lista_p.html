@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Produtos</h1>
+
+    <a href="/produtos/novo">
+        <button>Novo Produto</button>
+    </a>
+
+    {% for produto in produtos %}
+        <div class="card">
+            <h3>{{ produto.nome }}</h3>
+            <p>R$ {{ produto.preco }}</p>
+
+            <a href="/produtos/{{ produto.id }}">
+                <button>Detalhes</button>
+            </a>
+
+            <a href="/produtos/{{ produto.id }}/editar">
+                <button>Editar</button>
+            </a>
+        </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>

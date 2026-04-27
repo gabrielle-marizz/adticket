@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhe</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>{{ produto.nome }}</h1>
+
+    <p>{{ produto.descricao }}</p>
+    <p>Preço: R$ {{ produto.preco }}</p>
+
+    <p>Tamanhos: {{ "Sim" if produto.possui_tamanhos else "Não" }}</p>
+    <p>Estoque: {{ "Sim" if produto.controla_estoque else "Não" }}</p>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolher usuário</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Selecione o seu tipo de usuário</h1>
+
+    <div class="card">
+        <a href="/login/admin">
+            <button>Administrador</button>
+        </a>
+
+        <a href="/login/operador">
+            <button>Usuário Padrão</button>
+        </a>
+    </div>
+</div>
+
+</body>
+</html>
